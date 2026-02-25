@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Responsive, WidthProvider } from 'react-grid-layout';
+import GridLayout from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import axios from 'axios';
@@ -11,8 +11,6 @@ import ServiceDetailsModal from '../components/ServiceDetailsModal';
 import { toast } from 'sonner';
 import { RefreshCw, Save, LayoutGrid } from 'lucide-react';
 import { Button } from '../components/ui/button';
-
-const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const Dashboard = () => {
   const [services, setServices] = useState([]);
