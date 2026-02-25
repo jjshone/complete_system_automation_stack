@@ -1,0 +1,123 @@
+{
+  "identity": {
+    "persona": "E1: The Anti-AI Designer",
+    "mission": "Create a high-performance, glass-morphic orchestration workspace that feels like a futuristic command center.",
+    "principles": [
+      "Fusion over Imitation: Mix tactical HUD aesthetics with glassmorphism.",
+      "Emotion First: Evoke control, precision, and depth.",
+      "Content is King: Data visibility is paramount.",
+      "Zoom In: Focus on metric details.",
+      "Negative Space: Use spacing to prevent clutter in dense grids."
+    ]
+  },
+  "typography": {
+    "primary_font": "Manrope",
+    "secondary_font": "JetBrains Mono",
+    "heading_styles": {
+      "h1": "text-4xl md:text-5xl font-bold tracking-tight text-white",
+      "h2": "text-3xl font-semibold tracking-tight text-white",
+      "h3": "text-2xl font-medium tracking-tight text-zinc-100",
+      "h4": "text-xl font-medium text-zinc-200"
+    },
+    "body_styles": {
+      "base": "text-base text-zinc-400 leading-relaxed font-sans",
+      "small": "text-sm text-zinc-500",
+      "code": "font-mono text-sm bg-black/50 p-1 rounded text-green-400"
+    }
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": {
+        "default": "#09090b",
+        "paper": "#18181b",
+        "glass": "rgba(9, 9, 11, 0.6)"
+      },
+      "text": {
+        "primary": "#ffffff",
+        "secondary": "#a1a1aa",
+        "muted": "#52525b"
+      },
+      "primary": {
+        "main": "#ffffff",
+        "contrast": "#000000"
+      },
+      "accent": {
+        "main": "#06b6d4",
+        "hover": "#0891b2",
+        "glow": "0 0 20px rgba(6, 182, 212, 0.5)"
+      },
+      "status": {
+        "success": "#10b981",
+        "warning": "#f59e0b",
+        "error": "#ef4444",
+        "info": "#3b82f6"
+      }
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": {
+      "base": "bg-zinc-950/40 backdrop-blur-xl border border-white/10 shadow-2xl",
+      "heavy": "bg-black/60 backdrop-blur-2xl border border-white/5",
+      "light": "bg-white/5 backdrop-blur-lg border border-white/10"
+    },
+    "borders": {
+      "subtle": "border-zinc-800",
+      "highlight": "border-cyan-500/50"
+    },
+    "shadows": {
+      "glow": "shadow-[0_0_15px_rgba(6,182,212,0.3)]",
+      "depth": "shadow-xl"
+    }
+  },
+  "layout_strategy": {
+    "dashboard": {
+      "type": "Bento Grid (Mode B)",
+      "gap": "gap-4",
+      "padding": "p-6"
+    },
+    "container": {
+      "maxWidth": "max-w-7xl mx-auto"
+    }
+  },
+  "components": {
+    "DashboardGrid": {
+      "library": "react-grid-layout",
+      "style": "w-full h-full min-h-[calc(100vh-4rem)]"
+    },
+    "ServiceCard": {
+      "style": "relative overflow-hidden rounded-xl border border-white/10 bg-zinc-900/50 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] group",
+      "header": "flex items-center justify-between p-4 border-b border-white/5",
+      "body": "p-4 space-y-4",
+      "footer": "p-4 border-t border-white/5 bg-black/20"
+    },
+    "Sidebar": {
+      "style": "fixed left-0 top-0 h-full w-16 hover:w-64 transition-all duration-300 z-50 bg-black/80 backdrop-blur-xl border-r border-white/10 flex flex-col items-center hover:items-start overflow-hidden"
+    },
+    "Button": {
+      "variants": {
+        "primary": "rounded-full bg-cyan-600 text-white hover:bg-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all px-6 py-2 font-medium",
+        "secondary": "rounded-full bg-white/10 text-white hover:bg-white/20 border border-white/10 transition-all px-6 py-2",
+        "ghost": "rounded-full hover:bg-white/5 text-zinc-400 hover:text-white transition-all px-4 py-2"
+      }
+    }
+  },
+  "media": {
+    "background_image": "https://images.unsplash.com/photo-1764258560300-2346b28b4e7c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBjeWJlciUyMHRlY2hub2xvZ3klMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MjAzNTc1N3ww&ixlib=rb-4.1.0&q=85",
+    "placeholder_service": "https://images.unsplash.com/photo-1689692784625-1ce82784a25a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwzfHxzZXJ2ZXIlMjBkYXRhJTIwY2VudGVyJTIwYmx1ZSUyMG5lb258ZW58MHx8fHwxNzcyMDM1NzU4fDA&ixlib=rb-4.1.0&q=85"
+  },
+  "universal_guidelines": [
+    "ALWAYS use dark mode variables. No light mode toggles initially.",
+    "Use 'lucide-react' for icons.",
+    "Implement 'sonner' for notifications.",
+    "Use 'recharts' for data visualization in service cards.",
+    "Ensure all interactive elements have 'data-testid'.",
+    "Do not center-align the main dashboard; use a grid layout.",
+    "Use 'react-grid-layout' for the draggable dashboard.",
+    "Add specific transitions: 'transition-all duration-300 ease-out'.",
+    "Never use pure black (#000000) for backgrounds; use #09090b or darker zinc shades.",
+    "Ensure contrast ratios meet WCAG AA standards (4.5:1 for normal text).",
+    "Use ample padding (p-6, p-8) inside containers."
+  ],
+  "instructions_to_main_agent": "Start by setting up the global dark theme in index.css. Create the layout wrapper with the glass sidebar. Then build the draggable dashboard grid. Use the provided background image as a fixed cover background for the entire app to give depth behind the glass panels."
+}
