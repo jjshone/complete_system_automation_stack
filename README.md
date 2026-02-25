@@ -89,6 +89,8 @@ A self-hosted orchestration platform that launches, links, and presents containe
 ### Database
 - **MySQL 8.0**: Metadata storage for services, layouts, and configurations
 
+**Note**: This project uses **MySQL ONLY**. No MongoDB is required or used.
+
 ## 🛠️ Installation
 
 ### Prerequisites
