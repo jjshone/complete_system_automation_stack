@@ -624,8 +624,9 @@ async def get_container_status(service_id: str) -> Dict[str, Any]:
         return {"status": container.status, "container_id": container.id}
     except docker.errors.NotFound:
         return {"status": "stopped", "container_id": None}
-    except Exception:
-        return {"status": "unknown", "container_id": None}
+    except Exception as e:
+        logger.debug(f"Docker not available or container not found: {e}")
+        return {"status": "stopped", "container_id": None}
 
 @api_router.get("/layouts", response_model=List[Layout])
 async def get_layouts():
