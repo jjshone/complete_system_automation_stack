@@ -9,35 +9,8 @@ import { ScrollArea } from './ui/scroll-area';
 import { Separator } from './ui/separator';
 import { toast } from 'sonner';
 
-const Sidebar = ({ onAddService }) => {
-  const [services, setServices] = useState([]);
+const Sidebar = ({ onAddService, services, onToggleService }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
-  const fetchServices = async () => {
-    try {
-      const response = await axios.get(`${API_URL}/services`);
-      setServices(response.data);
-    } catch (error) {
-      console.error('Error fetching services:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchServices();
-    const interval = setInterval(fetchServices, 30000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleToggleService = async (serviceId, currentEnabled) => {
-    try {
-      await axios.patch(`${API_URL}/services/${serviceId}/enable?enabled=${!currentEnabled}`);
-      toast.success(currentEnabled ? 'Service disabled' : 'Service enabled');
-      fetchServices();
-    } catch (error) {
-      console.error('Error toggling service:', error);
-      toast.error('Failed to toggle service');
-    }
-  };
 
   const groupedServices = services.reduce((acc, service) => {
     if (!acc[service.category]) {
