@@ -224,13 +224,13 @@ const Dashboard = () => {
             </div>
           </div>
         ) : (
-          <ResponsiveGridLayout
+          <GridLayout
             key={refreshKey}
             className="layout"
-            layouts={{ lg: generateLayout() }}
-            breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-            cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
+            layout={generateLayout()}
+            cols={12}
             rowHeight={100}
+            width={1800}
             onLayoutChange={handleLayoutChange}
             isDraggable={true}
             isResizable={true}
@@ -249,7 +249,7 @@ const Dashboard = () => {
                 />
               </div>
             ))}
-          </ResponsiveGridLayout>
+          </GridLayout>
         )}
       </div>
 
