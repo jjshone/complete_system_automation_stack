@@ -491,7 +491,11 @@ async def toggle_service(service_id: str, enabled: bool):
 @api_router.post("/containers/{service_id}/start")
 async def start_container(service_id: str):
     try:
-        client = docker.from_env()
+        try:
+            client = docker.from_env()
+        except Exception as docker_error:
+            logger.warning(f"Docker not available: {docker_error}")
+            raise HTTPException(status_code=503, detail="Docker service not available. This demo requires Docker to be running.")
         
         async with db_pool.acquire() as conn:
             async with conn.cursor(aiomysql.DictCursor) as cursor:
