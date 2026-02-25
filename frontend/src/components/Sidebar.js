@@ -71,7 +71,7 @@ const Sidebar = ({ onAddService, services, onToggleService }) => {
                       </div>
                       <Switch
                         checked={service.enabled}
-                        onCheckedChange={() => handleToggleService(service.id, service.enabled)}
+                        onCheckedChange={() => onToggleService(service.id, service.enabled)}
                         className="data-[state=checked]:bg-cyan-500"
                         data-testid={`toggle-service-${service.id}`}
                       />
